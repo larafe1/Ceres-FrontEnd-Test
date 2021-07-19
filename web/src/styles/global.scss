@@ -17,12 +17,14 @@ body {
 }
 
 :root {
+  --text: #29462e;
   --background: #dfdddd;
   --lighter-brown: #8a5d3b;
   --darker-brown: #5d534a;
   --lighter-green: #8db596;
   --darker-green: #5aa469;
-  --text: #29462e;
+  --lighter-red: #ff8585;
+  --darker-red: #a52d2d;
 }
 
 @media(max-width: 1000px) {

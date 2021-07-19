@@ -47,12 +47,13 @@ export default function Main() {
         setHasUsers(true);
         handleToastNotification(true, 'Cadastro efetuado');
         handleFetchUsers();
-        window.scrollTo({
-          top: document.body.scrollHeight,
-          behavior: 'smooth'
-        });
+        setTimeout(() => {
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+          });
+        }, 1000);
 
-        /*
         setName('');
         setLastName('');
         setEmail('');
@@ -64,7 +65,6 @@ export default function Main() {
         setAddressNumber('');
         setCity('');
         setState('');
-        */
       })
       .catch(err => {
         handleToastNotification(false);
@@ -72,7 +72,7 @@ export default function Main() {
       });
   }
 
-  async function handleFetchUsers() {
+  function handleFetchUsers() {
     database
       .ref('users')
       .on('value', user => {
@@ -257,44 +257,47 @@ export default function Main() {
       </div>
 
       {hasUsers && (
-        <div>
-          <ul className="div-table">
-            <li className="div-table__header">
-              <div className="div-table__col col-action">Ação</div>
-              <div className="div-table__col col-name">Nome</div>
-              <div className="div-table__col col-email">E-mail</div>
-              <div className="div-table__col col-phone">Telefone</div>
-              <div className="div-table__col col-social-number">CPF/CNPJ</div>
-              <div className="div-table__col col-cep">CEP</div>
-              <div className="div-table__col col-address">Logradouro</div>
-              <div className="div-table__col col-address-district">Bairro</div>
-              <div className="div-table__col col-address-number">Número</div>
-              <div className="div-table__col col-city">Cidade</div>
-              <div className="div-table__col col-state">Estado</div>
-            </li>
-            {users.map(user => {
-              return (
-                <li key={user.id} className="div-table__body">
-                  <button
-                    className="col-action col-button"
-                    onClick={() => handleUserDeletion(user)}
-                  >
-                    Excluir
-                  </button>
-                  <div className="div-table__col col-name">{user.username}</div>
-                  <div className="div-table__col col-email">{user.email}</div>
-                  <div className="div-table__col col-phone">{user.phone}</div>
-                  <div className="div-table__col col-social-number">{user.cpfOrCnpj}</div>
-                  <div className="div-table__col col-cep">{user.cep}</div>
-                  <div className="div-table__col col-address">{user.address}</div>
-                  <div className="div-table__col col-address-district">{user.addressDistrict}</div>
-                  <div className="div-table__col col-address-number">{user.addressNumber}</div>
-                  <div className="div-table__col col-city">{user.city}</div>
-                  <div className="div-table__col col-state">{user.state}</div>
-                </li>
-              );
-            })}
-          </ul>
+        <div className="div-table">
+          <table>
+            <thead className="div-table__header">
+              <tr className="div-table__header-row">
+                <th>Ação</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Telefone</th>
+                <th>CPF/CNPJ</th>
+                <th>CEP</th>
+                <th>Logradouro</th>
+                <th>Bairro</th>
+                <th>Número</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody className="div-table__body">
+              {users.map(user => {
+                return (
+                  <tr key={user.id} className="div-table__body-row">
+                    <td>
+                      <button onClick={() => handleUserDeletion(user)}>
+                        Excluir
+                      </button>
+                    </td>
+                    <td>{user.username}</td>
+                    <td>{user.email}</td>
+                    <td>{user.phone}</td>
+                    <td>{user.cpfOrCnpj}</td>
+                    <td>{user.cep}</td>
+                    <td>{user.address}</td>
+                    <td>{user.addressDistrict}</td>
+                    <td>{user.addressNumber}</td>
+                    <td>{user.city}</td>
+                    <td>{user.state}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
       )}
     </main>
