@@ -1,10 +1,43 @@
 aside {
-  width: 50vw;
+  width: 60vw;
   height: 100vh;
 
   overflow: hidden;
 
   background: var(--lighter-brown);
+
+  h3, h1 {
+    position: absolute;
+    margin-left: 1rem;
+
+    color: #fff;
+    font-family: 'Domine', sans-serif;
+
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    animation: fadeIn 5s;
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  h3 {
+    margin-top: 3.3rem;
+    font-size: 48px;
+  }
+
+  h1 {
+    margin-top: 8rem;
+    font-size: 64px;
+  }
 
   img {
     width: 100%;
@@ -13,35 +46,39 @@ aside {
     object-fit: cover;
     opacity: .4;
   }
-}
 
-.main-div {
-  -webkit-animation: fadein 1.75s;
-    -moz-animation: fadein 1.75s;
-      -ms-animation: fadein 1.75s;
-        -o-animation: fadein 1.75s;
-          animation: fadein 1.75s;
-}
+  -webkit-animation: slide 2.5s;
+  -moz-animation: slide 2.5s;
+  -ms-animation: slide 2.5s;
+  -o-animation: slide 2.5s;
+  animation: slide 2.5s;
 
-@keyframes fadein {
-  from {
-    opacity: 0;
+  @keyframes slide {
+    from {
+      width: 100vw;
+    }
+    to {
+      width: 60vw;
+    }
   }
-  to {
-    opacity: 1;
+
+  @media(max-width: 1200px) {
+    h3, h1 {
+      display: none;
+    }
   }
 }
 
-.main-div {
+.div-form {
   position: absolute;
-  inset: 6% 25%;
+  inset: 6% 12.5% 6% 39.5%;
 
   border-radius: 8px;
 
   background: #ededed;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 
-  .main-div__header {
+  .div-form__header {
     width: 100%;
     height: 4.8rem;
 
@@ -54,24 +91,15 @@ aside {
 
     background: #e7e7e7;
 
-    h4 {
-      font-size: 18px;
-      font-weight: 700;
-
-      color: #8DB596;
-    }
-
     h2 {
-      padding-left: 1.25rem;
-
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 700;
 
       color: var(--darker-brown);
     }
   }
 
-  .separator {
+  .div-form__body-separator {
     margin: 1.6rem 4rem;
 
     display: flex;
@@ -97,7 +125,7 @@ aside {
     }
   }
 
-  .input-block {
+  .div-form__input-block {
     margin: 0 4rem;
     padding-bottom: 35px;
 
@@ -122,19 +150,19 @@ aside {
     }
   }
 
-  .name-input,
-  .address-input,
-  .location-input {
+  .input-name,
+  .input-address,
+  .input-location {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
 
-  .name-input input {
+  .input-name input {
     width: 49%;
   }
 
-  .address-input input {
+  .input-address input {
     width: 41%;
 
     &:last-child {
@@ -142,7 +170,7 @@ aside {
     }
   }
 
-  .location-input input {
+  .input-location input {
     width: 18%;
 
     &:first-child {
@@ -178,5 +206,136 @@ aside {
         filter: brightness(0.9);
       }
     }
+  }
+
+  -webkit-animation: fadeIn 1.75s;
+  -moz-animation: fadeIn 1.75s;
+  -ms-animation: fadeIn 1.75s;
+  -o-animation: fadeIn 1.75s;
+  animation: fadeIn 1.75s;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media(max-width: 1200px) {
+    inset: 2% 12.5% 2% 25.5%;
+
+    .div-form__header h2 {
+      font-size: 22px;
+    }
+
+    .input-name,
+    .input-address,
+    .input-location {
+      flex-direction: column;
+
+      input {
+        &:first-child {
+          border-radius: 5px 5px 0 0;
+          border-bottom: none;
+        }
+
+        &:nth-child(2):not(:last-child) {
+          border-radius: 0;
+          &:not(:focus) {
+            border-bottom: none;
+          }
+        }
+
+        &:last-child {
+          border-radius: 0 0 5px 5px;
+        }
+      }
+    }
+
+    .div-form__input-block {
+      padding-bottom: 5px;
+
+      input {
+        &:focus {
+          border: 1px solid var(--darker-green);
+        }
+      }
+    }
+
+    .input-name input,
+    .input-address input,
+    .input-address input:last-child,
+    .input-location input,
+    .input-location input:first-child {
+      width: 100%;
+    }
+  }
+
+  @media(max-width: 670px) {
+    inset: 2% 5%;
+
+    .div-form__header h2 {
+      font-size: 18px;
+    }
+
+    .div-form__input-block {
+      padding: 3px;
+
+      input {
+        height: 2.6rem;
+      }
+    }
+
+    .button-submit button {
+      height: 2.5rem;
+      width: 7rem;
+    }
+  }
+}
+
+.div-table {
+  width: 100%;
+
+  li {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1.75rem;
+    padding: 5px 0;
+
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .div-table__header {
+    background: var(--lighter-green);
+    font-weight: 600;
+  }
+
+  .div-table__body {
+    font-size: 16px;
+    background: #fff;
+
+    .col-button {
+      width: 5%;
+
+      border-radius: 5px;
+      border: 1px solid #a52d2d;
+
+      color: #a52d2d;
+      background: #ff8585;
+
+      cursor: pointer;
+
+      transition: filter .2s;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
+
+  .div-table__col {
+    padding: 10px;
   }
 }

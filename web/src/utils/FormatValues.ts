@@ -1,3 +1,9 @@
+export function capitalizeStr(value: string) {
+  return value
+    .charAt(0)
+    .toUpperCase() + value.slice(1);
+}
+
 export function formatPhone(value: string) {
   return value
     .replace(/\D/g, '')
