@@ -1,10 +1,10 @@
-<h2 align="center">
+<h1 align="center">
   Desafio Front-end Ceres Investimentos
-</h2>
+</h1>
 
 ## Sobre
 
-Desafio de desenvolvimento em front-end proposto pelo time da Ceres Investimentos.
+Desafio de desenvolvimento em front-end proposto pelo time de desenvolvedores da Ceres Investimentos.
 
 ### Tecnologias utilizadas
 
@@ -19,9 +19,9 @@ Desafio de desenvolvimento em front-end proposto pelo time da Ceres Investimento
 Primeiramente, clone esse repositório utilizando o `git`, em seguida, entre no diretório do projeto.
 
 ```elm
-git clone https://github.com/felpshn/Desafio-Front-end.git
+git clone https://github.com/felpshn/Desafio-FrontEnd-Ceres.git
 
-cd Desafio-Front-end
+cd Desafio-FrontEnd-Ceres
 ```
 
 Agora, crie um arquivo com o nome `.env.local` na raiz do projeto, copie o template abaixo e insira suas credenciais para conectar com seu Firebase's Realtime Database.

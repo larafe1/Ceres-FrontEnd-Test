@@ -69,7 +69,7 @@ aside {
   }
 }
 
-.div-form {
+.div__form {
   position: absolute;
   inset: 6% 12.5% 6% 39.5%;
 
@@ -78,7 +78,7 @@ aside {
   background: #ededed;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 
-  .div-form__header {
+  .form__header {
     width: 100%;
     height: 4.8rem;
 
@@ -99,7 +99,7 @@ aside {
     }
   }
 
-  .div-form__body-separator {
+  .form__body-separator {
     margin: 1.6rem 4rem;
 
     display: flex;
@@ -125,7 +125,7 @@ aside {
     }
   }
 
-  .div-form__input-block {
+  .form__input-block {
     margin: 0 4rem;
     padding-bottom: 35px;
 
@@ -178,7 +178,7 @@ aside {
     }
   }
 
-  .button-submit {
+  .form__button-submit {
     width: 100%;
 
     margin-top: 20px;
@@ -226,7 +226,7 @@ aside {
   @media(max-width: 1200px) {
     inset: 2% 12.5% 2% 25.5%;
 
-    .div-form__header h2 {
+    .form__header h2 {
       font-size: 22px;
     }
 
@@ -254,7 +254,7 @@ aside {
       }
     }
 
-    .div-form__input-block {
+    .form__input-block {
       padding-bottom: 5px;
 
       input {
@@ -276,11 +276,11 @@ aside {
   @media(max-width: 670px) {
     inset: 2% 5%;
 
-    .div-form__header h2 {
+    .form__header h2 {
       font-size: 18px;
     }
 
-    .div-form__input-block {
+    .form__input-block {
       padding: 3px;
 
       input {
@@ -288,15 +288,15 @@ aside {
       }
     }
 
-    .button-submit button {
+    .form__button-submit button {
       height: 2.5rem;
       width: 7rem;
     }
   }
 }
 
-.div-table {
-  .div-table__header-row {
+.div__table {
+  .table__header-row {
     height: 3rem;
 
     background: var(--lighter-green);
@@ -314,7 +314,7 @@ aside {
     }
   }
 
-  .div-table__body-row td {
+  .table__body-row td {
     text-align: center;
 
     border: 1px solid #ccc;
@@ -342,8 +342,8 @@ aside {
     }
   }
 
-  .div-table__header th,
-  .div-table__body td {
+  .table__header th,
+  .table__body td {
     padding: 10px;
   }
 
@@ -352,11 +352,11 @@ aside {
       width: 100%;
     }
 
-    .div-table__header {
+    .table__header {
       display: none;
     }
 
-    .div-table__body-row td {
+    .table__body-row td {
       display: block;
       padding: 1.2rem;
     }

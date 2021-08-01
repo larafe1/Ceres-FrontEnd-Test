@@ -120,13 +120,13 @@ export default function Main() {
         <h1>Ceres <br /> Investimentos</h1>
         <img src={bgImg} alt="Agriculture" />
       </aside>
-      <div className="div-form">
-        <div className="div-form__header">
+      <div className="div__form">
+        <div className="form__header">
           <h2>Cadastre-se em nossa plataforma</h2>
         </div>
-        <div className="div-form__body-separator">Insira seus dados</div>
+        <div className="form__body-separator">Insira seus dados</div>
         <form onSubmit={handleFormSubmit}>
-          <div className="div-form__input-block input-name">
+          <div className="form__input-block input-name">
             <input
               type="text"
               name="first-name"
@@ -144,7 +144,7 @@ export default function Main() {
               required
             />
           </div>
-          <div className="div-form__input-block">
+          <div className="form__input-block">
             <input
               type="email"
               name="email"
@@ -154,7 +154,7 @@ export default function Main() {
               required
             />
           </div>
-          <div className="div-form__input-block">
+          <div className="form__input-block">
             <input
               type="text"
               name="phone"
@@ -166,7 +166,7 @@ export default function Main() {
               required
             />
           </div>
-          <div className="div-form__input-block">
+          <div className="form__input-block">
             <input
               type="text"
               pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})"
@@ -178,7 +178,7 @@ export default function Main() {
               required
             />
           </div>
-          <div className="div-form__input-block">
+          <div className="form__input-block">
             <input
               type="text"
               name="cep"
@@ -190,7 +190,7 @@ export default function Main() {
               required
             />
           </div>
-          <div className="div-form__input-block input-address">
+          <div className="form__input-block input-address">
             <input
               type="text"
               name="address"
@@ -218,7 +218,7 @@ export default function Main() {
               required
             />
           </div>
-          <div className="div-form__input-block input-location">
+          <div className="form__input-block input-location">
             <input
               type="text"
               pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$"
@@ -250,17 +250,17 @@ export default function Main() {
               required
             />
           </div>
-          <div className="button-submit">
+          <div className="form__button-submit">
             <button type="submit">Cadastrar</button>
           </div>
         </form>
       </div>
 
       {hasUsers && (
-        <div className="div-table">
+        <div className="div__table">
           <table>
-            <thead className="div-table__header">
-              <tr className="div-table__header-row">
+            <thead className="table__header">
+              <tr className="table__header-row">
                 <th>Ação</th>
                 <th>Nome</th>
                 <th>E-mail</th>
@@ -274,10 +274,10 @@ export default function Main() {
                 <th>Estado</th>
               </tr>
             </thead>
-            <tbody className="div-table__body">
+            <tbody className="table__body">
               {users.map(user => {
                 return (
-                  <tr key={user.id} className="div-table__body-row">
+                  <tr key={user.id} className="table__body-row">
                     <td>
                       <button onClick={() => handleUserDeletion(user)}>
                         Excluir
