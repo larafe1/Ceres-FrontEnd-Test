@@ -2,6 +2,8 @@
   "name": "web",
   "version": "0.1.0",
   "private": true,
+  "author": "larafe1",
+  "repository": "https://github.com/larafe1/frontend-test-ceres.git",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",

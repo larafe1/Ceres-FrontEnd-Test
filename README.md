@@ -19,9 +19,9 @@ Desafio de desenvolvimento em front-end proposto pelo time de desenvolvedores da
 Primeiramente, clone esse repositório utilizando o `git`, em seguida, entre no diretório do projeto.
 
 ```elm
-git clone https://github.com/felpshn/Desafio-FrontEnd-Ceres.git
+git clone https://github.com/larafe1/frontend-test-ceres.git
 
-cd Desafio-FrontEnd-Ceres
+cd frontend-test-ceres
 ```
 
 Agora, crie um arquivo com o nome `.env.local` na raiz do projeto, copie o template abaixo e insira suas credenciais para conectar com seu Firebase's Realtime Database.
